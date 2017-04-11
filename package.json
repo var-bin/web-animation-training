@@ -1,0 +1,26 @@
+{
+  "name": "web-animation-training",
+  "version": "1.0.0",
+  "description": "CSS web animations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/var-bin/web-animation-training.git"
+  },
+  "keywords": [
+    "css",
+    "web",
+    "animations",
+    "@keyframes",
+    "transition"
+  ],
+  "author": "Vitalii Rybka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/var-bin/web-animation-training/issues"
+  },
+  "homepage": "https://github.com/var-bin/web-animation-training#readme"
+}
