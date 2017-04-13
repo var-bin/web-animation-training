@@ -4,6 +4,7 @@
   0% {
     transform: scale(0);
   }
+
   100% {
     transform: scale(1);
   }
@@ -15,6 +16,7 @@
     visibility: visible;
     opacity: 1;
   }
+
   100% {
     transform: scale(0);
     visibility: hidden;
@@ -27,6 +29,7 @@
     width: 2em;
     height: 2em;
   }
+
   100% {
     width: 0;
     height: 0;
@@ -37,6 +40,7 @@
   0% {
     width: 0;
   }
+
   100% {
     width: calc(100% - 1em);
   }
