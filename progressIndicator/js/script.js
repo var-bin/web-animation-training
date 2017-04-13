@@ -10,15 +10,8 @@
   const IS_ACTIVE = ".is-active";
   const IS_PREVIOUS = ".is-previous";
 
-  // css custom variable
-  const MAIN_ICON_POSITION = "--shift-position";
-  const USER_FORM_WIDTH = "--user-form-width";
-
-  // result value for MAIN_ICON_POSITION
+  // result value for main icon
   let mainIconPositionValue;
-
-  // result value for USER_FORM_WIDTH
-  let userFormWidthValue;
 
   // user form variables
   let userForm = doc.getElementById("userForm");
@@ -39,23 +32,19 @@
   // submit button
   let buttonSubmit = doc.getElementById("submit");
 
+  // main icon
+  let mainIcon = doc.getElementById("mainIcon");
+
   function _initCurrentStep() {
     currentStep.innerHTML = currentStepValue;
     progressIndicator.setAttribute(dataCurrentStepAttr, currentStepValue - 1);
   }
 
   function _setMainIconPosition() {
-    // set value for custom css variable
+    // set value for main icon
     mainIconPositionValue = currentStepValue - 1;
 
-    progressIndicator.style.setProperty(MAIN_ICON_POSITION, mainIconPositionValue * 100 + "%");
-  }
-
-  function _setUserFormWidth() {
-    // set value for custom css variable
-    userFormWidthValue = progressStepsLength + 1;
-
-    userForm.style.setProperty(USER_FORM_WIDTH, userFormWidthValue * 100 + "%");
+    mainIcon.style.left = mainIconPositionValue * 100 + "%";
   }
 
   function _initActiveStep() {
@@ -89,10 +78,11 @@
     if (currentStepValue > progressStepsLength) {
       return false;
     }
+
     // set data-current-step
     progressIndicator.setAttribute(dataCurrentStepAttr, currentStepValue - 1);
 
-    // set value for custom css variable
+    // set value for main icon
     _setMainIconPosition();
 
     activeStep.classList.remove(activeEl);
@@ -113,13 +103,10 @@
 
   function init() {
     _initCurrentStep();
-    _setUserFormWidth();
     _initActiveStep();
     _switchStep();
   }
 
   init();
-
-  //console.log("steps: ", steps, "active step: ", activeStep, ".progress-indicator__step: ", progressSteps, "activeProgressStep: ", activeProgressStep);
 
 })(window, document);
