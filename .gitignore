@@ -3,3 +3,9 @@ node_modules
 
 # *.sublime*
 *.sublime*
+
+# dest
+dest
+
+# reports
+reports
